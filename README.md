@@ -272,6 +272,18 @@ If hooks feel too global or you only want ECC's rules, agents, commands, and cor
 ```powershell
 .\install.ps1 --profile minimal --target claude
 # or
+
+
+---
+
+> [!NOTE]
+> **🌌 Integración Megacore (Megasoft)**
+> Este repositorio forma parte del ecosistema local de Megasoft y está configurado bajo los estándares de **Megacore**:
+> - 🛡️ **`no-mistakes`**: Calidad y pruebas automatizadas pre-push definidas en [.no-mistakes.yaml](file://./.no-mistakes.yaml).
+> - 🧠 **`codebase-memory-mcp`**: Estructurado para indexación y consulta rápida mediante el Grafo de Conocimiento del Copilot.
+
+---
+
 npx ecc-install --profile minimal --target claude
 ```
 
