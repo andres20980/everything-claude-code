@@ -1,0 +1,18 @@
+# Mem0 - Configuración estándar de Memoria Inteligente para Agentes de Megacore (2026)
+# Configura una capa de memoria semántica híbrida (Vector + Graph) local y persistente.
+
+version: "1.0"
+
+vector_store:
+  provider: "chroma" # Base de datos vectorial local incrustada (sin dependencias de red)
+  config:
+    path: ".mem0/vector_db"
+    collection_name: "megacore_agent_memories"
+
+embedder:
+  provider: "gemini" # Reutiliza las credenciales de Gemini configuradas en el entorno .env
+  config:
+    model: "text-embedding-004"
+
+graph_store:
+  enabled: false # Cambiar a true si se dispone de una instancia de Neo4j en el ecosistema

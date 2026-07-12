@@ -14,8 +14,8 @@ flowchart TD
     A --> C[2. codebase-memory-mcp & Understand-Anything: Base de Conocimiento]
     A --> D[3. openwiki & OmniRoute: Documentación & FinOps]
     A --> E[4. open-source: Gobernanza & CRA]
-    A --> F[5. reicon: Iconos SVG Estandarizados]
-    A --> G[6. hipocampo: Memoria de Agentes de IA]
+    A --> F[5. lucide: Iconografía Estandarizada]
+    A --> G[6. mem0: Memoria de Agentes de IA]
 
     style A fill:#1a1b26,stroke:#7aa2f7,stroke-width:2px,color:#fff
     style B fill:#24283b,stroke:#f7768e,stroke-width:1px,color:#fff
@@ -49,16 +49,25 @@ Estructura y genera los elementos de gobernanza y control de seguridad alineados
 * **Ficheros generados:** `LICENSE` (MIT), `CONTRIBUTING.md`, `SECURITY.md` (Español).
 * **Escaneo automático:** El script `scripts/security_audit.sh` (basado en Perplexity Bumblebee) analiza el supply-chain del repo en busca de paquetes sospechosos en una sola pasada de sólo lectura.
 
-### 5. 🎨 `reicon` (Biblioteca de Iconos Estandarizada)
-Establece una biblioteca unificada de iconos vectoriales SVG diseñados sobre una cuadrícula de 24×24px, garantizando la consistencia visual y estética en las interfaces de usuario.
-* **Uso rápido en HTML:**
+### 5. 🎨 `lucide` (Iconografía Estandarizada)
+Establece a **Lucide Icons** como la biblioteca unificada de iconos vectoriales SVG para todos los frontends del ecosistema. Reemplaza cualquier conjunto personalizado de iconos por una solución ligera, modular, mantenida por la comunidad y compatible con tree-shaking.
+* **Integración rápida (HTML):**
   ```html
-  <script src="https://unpkg.com/reicon/cdn/reicon.min.js"></script>
-  <re-icon icon="settings" weight="outline" size="24"></re-icon>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <i data-lucide="settings"></i>
+  <script>lucide.createIcons();</script>
   ```
+* **Integración en Frameworks:** Usar paquetes nativos como `lucide-react`, `lucide-vue-next` y `lucide-svelte`.
 
-### 6. 🧠 `hipocampo` (Memoria de Agentes de IA)
-Implementa el estándar de memoria persistente a largo plazo para agentes autónomos. Utiliza almacenamiento PostgreSQL 17 con `pgvector` y embeddings vectoriales de Gemini para soportar una búsqueda híbrida y un sistema de memoria episódica/semántica.
+### 6. 🧠 `mem0` (Memoria Inteligente de Agentes de IA)
+Implementa el estándar de memoria persistente y auto-correctiva a largo plazo para agentes autónomos. Reemplaza la infraestructura de base de datos de `hipocampo` por **Mem0**, que autogestiona la incorporación, actualización y depuración de recuerdos de forma híbrida (Vector + Graph + KV).
+* **Fichero de configuración:** `mem0.yaml` en la raíz del proyecto.
+* **Integración en Python:**
+  ```python
+  from mem0 import Memory
+  memory = Memory.from_config("mem0.yaml")
+  memory.add("El usuario prefiere respuestas en español", user_id="andres")
+  ```
 
 ---
 
@@ -111,6 +120,7 @@ openwiki --init
 * `.no-mistakes.yaml` - Configuración base y por defecto del proxy git.
 * `.understand-anything/config.json` - Configuración estándar de visualización de grafo.
 * `scripts/security_audit.sh` - Script de escaneo de seguridad local (Bumblebee).
+* `mem0.yaml` - Configuración estándar de memoria inteligente para agentes.
 
 ---
 *Megacore - Automatizando y estandarizando la calidad del software en Megasoft.*
