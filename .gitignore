@@ -13,3 +13,7 @@ dist/
 *.log
 *.sqlite
 status.cache
+
+# OpenWiki logs de auditoría locales
+openwiki/logs/
+
