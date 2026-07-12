@@ -21,7 +21,7 @@ mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/security_audit_last.json"
 
 echo "🔍 Escaneando dependencias, MCPs y extensiones locales..."
-if bumblebee > "$LOG_FILE" 2>/dev/null; then
+if bumblebee scan > "$LOG_FILE" 2>/dev/null; then
   echo -e "✅ \033[1;32mAuditoría completada.\033[0m Informe guardado en: $LOG_FILE"
 else
   # Si falla o no devuelve datos
