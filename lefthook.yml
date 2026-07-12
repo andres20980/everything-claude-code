@@ -6,7 +6,7 @@ pre-commit:
   commands:
     biome-check:
       glob: "*.{js,ts,jsx,tsx,json,css}"
-      run: npx -y @biomejs/biome check --write --no-errors-on-unmatched {staged_files}
+      run: if [ -f "./node_modules/.bin/biome" ]; then ./node_modules/.bin/biome check --write --no-errors-on-unmatched {staged_files}; else npx --no-install @biomejs/biome check --write --no-errors-on-unmatched {staged_files} 2>/dev/null || npx -y @biomejs/biome check --write --no-errors-on-unmatched {staged_files}; fi
       stage_fixed: true
     security-audit:
       run: ./scripts/security_audit.sh
