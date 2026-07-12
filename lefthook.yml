@@ -1,0 +1,12 @@
+# Lefthook - Orquestador de Git Hooks de Alto Rendimiento para Megacore (2026)
+# Configuración paralela asíncrona para controles locales rápidos antes de commits.
+
+pre-commit:
+  parallel: true
+  commands:
+    biome-check:
+      glob: "*.{js,ts,jsx,tsx,json,css}"
+      run: npx -y @biomejs/biome check --write --no-errors-on-unmatched {staged_files}
+      stage_fixed: true
+    security-audit:
+      run: ./scripts/security_audit.sh

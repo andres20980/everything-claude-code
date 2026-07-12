@@ -1,0 +1,18 @@
+{
+  "theme": "dark",
+  "port": 3030,
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    ".git",
+    "openwiki",
+    ".openwiki",
+    "*.log",
+    "*.sqlite"
+  ],
+  "agentConfig": {
+    "defaultModel": "gemini-2.5-flash",
+    "tokenSavingsAlert": true
+  }
+}

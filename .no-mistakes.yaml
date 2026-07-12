@@ -1,18 +1,22 @@
-# Configuración estándar del Git Proxy no-mistakes para Megacore
+# Configuración estándar del Git Proxy no-mistakes para Megacore (2026)
 auto_fix:
-  review: 0     # Requerir aprobación explícita del desarrollador en findings de lógica/diseño
-  test: 1       # Auto-arreglar si hay fallas menores en tests
-  lint: 1       # Auto-arreglar problemas cosméticos y de formato (linter)
+  review: 0     # Requerir aprobación explícita en lógica y diseño
+  test: 1       # Auto-arreglar fallas menores en tests
+  lint: 1       # Auto-arreglar formato automáticamente (usando Biome)
 
 steps:
   review:
     enabled: true
+  security:
+    enabled: true
+    run: "./scripts/security_audit.sh"
   test:
     enabled: true
   docs:
     enabled: true
   lint:
     enabled: true
+    run: "npx -y @biomejs/biome check --write ."
   push:
     enabled: true
   pr:
