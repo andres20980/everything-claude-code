@@ -121,6 +121,7 @@ openwiki --init
 * `.understand-anything/config.json` - Configuración estándar de visualización de grafo.
 * `scripts/security_audit.sh` - Script de escaneo de seguridad local (Bumblebee).
 * `mem0.yaml` - Configuración estándar de memoria inteligente para agentes.
+* `AGENTS.md` - Contexto, comandos y directivas operativas estandarizadas para agentes de IA de código.
 
 ---
 *Megacore - Automatizando y estandarizando la calidad del software en Megasoft.*
