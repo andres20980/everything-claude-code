@@ -1,0 +1,19 @@
+# Configuración estándar del Git Proxy no-mistakes para Megacore
+auto_fix:
+  review: 0     # Requerir aprobación explícita del desarrollador en findings de lógica/diseño
+  test: 1       # Auto-arreglar si hay fallas menores en tests
+  lint: 1       # Auto-arreglar problemas cosméticos y de formato (linter)
+
+steps:
+  review:
+    enabled: true
+  test:
+    enabled: true
+  docs:
+    enabled: true
+  lint:
+    enabled: true
+  push:
+    enabled: true
+  pr:
+    enabled: true
