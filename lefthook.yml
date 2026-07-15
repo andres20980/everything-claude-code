@@ -10,3 +10,16 @@ pre-commit:
       stage_fixed: true
     security-audit:
       run: ./scripts/security_audit.sh
+
+
+post-commit:
+  commands:
+    update-codebase-memory:
+      run: |
+        /home/asanchez/.local/bin/codebase-memory-mcp cli index_repository '{"repo_path": "/home/asanchez/Code/forgejo/repositorios/everything-claude-code", "mode": "moderate"}' &
+
+post-merge:
+  commands:
+    update-codebase-memory:
+      run: |
+        /home/asanchez/.local/bin/codebase-memory-mcp cli index_repository '{"repo_path": "/home/asanchez/Code/forgejo/repositorios/everything-claude-code", "mode": "moderate"}' &
