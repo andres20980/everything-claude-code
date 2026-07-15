@@ -54,7 +54,7 @@ Build agents to auto-fallback across Gemini models on quota exhaustion:
 gemini-2.0-flash-lite (30 RPM) →
 gemini-2.0-flash (15 RPM) →
 gemini-2.5-flash (10 RPM) →
-gemini-flash-lite-latest (fallback)
+gemini-3.1-flash-lite (fallback)
 ```
 
 ### Batch API Calls for Efficiency
@@ -215,7 +215,7 @@ MODEL_FALLBACK = [
     "gemini-2.0-flash-lite",
     "gemini-2.0-flash",
     "gemini-2.5-flash",
-    "gemini-flash-lite-latest",
+    "gemini-3.1-flash-lite",
 ]
 
 

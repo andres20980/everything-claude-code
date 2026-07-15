@@ -53,7 +53,7 @@ schedule   summarises Sheets /
 gemini-2.0-flash-lite (30 RPM) →
 gemini-2.0-flash (15 RPM) →
 gemini-2.5-flash (10 RPM) →
-gemini-flash-lite-latest (fallback)
+gemini-3.1-flash-lite (fallback)
 ```
 
 ### 批量API调用以提高效率
@@ -217,7 +217,7 @@ MODEL_FALLBACK = [
     "gemini-2.0-flash-lite",
     "gemini-2.0-flash",
     "gemini-2.5-flash",
-    "gemini-flash-lite-latest",
+    "gemini-3.1-flash-lite",
 ]
 
 
